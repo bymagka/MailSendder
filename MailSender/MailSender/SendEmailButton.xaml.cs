@@ -22,9 +22,39 @@ namespace MailSender
     /// </summary>
     public partial class SendEmailButton : UserControl
     {
+        public static readonly DependencyProperty msgText =
+           DependencyProperty.Register("MessageText", typeof(string), typeof(SendEmailButton));
+
+        public static readonly DependencyProperty msgSubject =
+        DependencyProperty.Register("Subject", typeof(string), typeof(SendEmailButton));
+
+        public static readonly DependencyProperty msgReciever =
+        DependencyProperty.Register("Reciever", typeof(string), typeof(SendEmailButton));
+
+        public string MessageText
+        {
+            get { return (string)GetValue(msgText); }
+            set { SetValue(msgText, value); }
+        }
+
+
+        public string Subject
+        {
+            get { return (string)GetValue(msgSubject); }
+            set { SetValue(msgSubject, value); }
+        }
+
+        public string Reciever
+        {
+            get { return (string)GetValue(msgReciever); }
+            set { SetValue(msgReciever, value); }
+        }
+
         public SendEmailButton()
         {
             InitializeComponent();
+
+            
         }
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
@@ -39,13 +69,13 @@ namespace MailSender
             string password = Application.Current.Resources["password"].ToString();
 
             MailAddress from = new MailAddress(login, "Bymagka");
-            MailAddress to = new MailAddress(login);
+            MailAddress to = new MailAddress(Reciever);
            
             MailMessage m = new MailMessage(from, to);
             
-            m.Subject = "Тест";
+            m.Subject = Subject;
             
-            m.Body = "Тест";
+            m.Body = MessageText;
                    
             
             SmtpClient smtp = new SmtpClient("smtp.mail.ru", 587);

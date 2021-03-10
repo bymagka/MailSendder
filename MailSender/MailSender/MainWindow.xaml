@@ -14,11 +14,18 @@
             <RowDefinition Height="110*"/>
             <RowDefinition Height="70*"/>
             <RowDefinition Height="70*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="70*"/>
         </Grid.RowDefinitions>
-        <Label Content="Subject" HorizontalAlignment="Left" Margin="348,0,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Subject" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="16" Grid.Row="0"  Grid.ColumnSpan="1" Grid.RowSpan="1"/>
         <TextBox  Name ="tbSubject" Grid.Row ="1" Grid.RowSpan="1" Background="White"/>
-        <Label Content="Text" HorizontalAlignment="Left" Margin="348,9.667,0,0" VerticalAlignment="Top" FontSize="16" Grid.Row="2" Width="62" HorizontalContentAlignment="Center"/>
+        <Label Content="Text" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="16" Grid.Row="2"  Grid.ColumnSpan="1" Grid.RowSpan="1"/>
         <TextBox  Name ="tbMessageText" Grid.Row ="3" Grid.RowSpan="1" Background="White"/>
-        <local:SendEmailButton   Grid.Row="5"  Grid.ColumnSpan="1" Grid.RowSpan="1" Width="Auto" Height="Auto" />
+        <Label Content="Reciever" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="16" Grid.Row="4"  Grid.ColumnSpan="1" Grid.RowSpan="1"/>
+        <TextBox  Name ="tbReciever" Grid.Row ="5" Grid.RowSpan="1" Background="White"/>
+        <local:SendEmailButton   Grid.Row="7"  Grid.ColumnSpan="1" Grid.RowSpan="1" Width="Auto" Height="Auto" 
+                                 MessageText="{Binding ElementName=tbMessageText, Path=Text}" 
+                                 Subject="{Binding ElementName=tbSubject, Path=Text}"
+                                 Reciever="{Binding ElementName=tbReciever, Path=Text}"/>
     </Grid>
 </Window>
