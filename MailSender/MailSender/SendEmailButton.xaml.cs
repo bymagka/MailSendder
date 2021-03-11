@@ -59,7 +59,7 @@ namespace MailSender
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
-            e.Handled = true;
+            
             SendEmail();
         }
 

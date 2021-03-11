@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MailSender"
              mc:Ignorable="d" Height="24.34" Width="220">
-    <Grid>
+    <Grid MouseLeftButtonDown="btnSend_Click">
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -13,7 +13,7 @@
             <ColumnDefinition Width="70"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnSend" Content="Send email" Grid.Column="1" Grid.ColumnSpan="1" HorizontalContentAlignment ="Center" Click="btnSend_Click"/>
+        <Button x:Name="btnSend" Content="Send email" Grid.Column="1" Grid.ColumnSpan="1" HorizontalContentAlignment ="Center"/>
         <Image x:Name="imgSend" Source="Images/SendEmailImg.png"  />
     </Grid>
 </UserControl>
