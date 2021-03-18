@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MailSender
+namespace MVVMAccess
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,6 +24,5 @@ namespace MailSender
         {
             InitializeComponent();
         }
-
     }
 }

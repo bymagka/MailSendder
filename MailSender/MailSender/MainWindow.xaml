@@ -5,27 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MailSender"
         mc:Ignorable="d"
-        Title="Mail sender" Height="450" Width="800">
-    <Grid Background="#FFF8CFCF">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="37*"/>
-            <RowDefinition Height="50*"/>
-            <RowDefinition Height="55*"/>
-            <RowDefinition Height="110*"/>
-            <RowDefinition Height="70*"/>
-            <RowDefinition Height="70*"/>
-            <RowDefinition Height="70*"/>
-            <RowDefinition Height="70*"/>
-        </Grid.RowDefinitions>
-        <Label Content="Subject" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="16" Grid.Row="0"  Grid.ColumnSpan="1" Grid.RowSpan="1"/>
-        <TextBox  Name ="tbSubject" Grid.Row ="1" Grid.RowSpan="1" Background="White"/>
-        <Label Content="Text" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="16" Grid.Row="2"  Grid.ColumnSpan="1" Grid.RowSpan="1"/>
-        <TextBox  Name ="tbMessageText" Grid.Row ="3" Grid.RowSpan="1" Background="White"/>
-        <Label Content="Reciever" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="16" Grid.Row="4"  Grid.ColumnSpan="1" Grid.RowSpan="1"/>
-        <TextBox  Name ="tbReciever" Grid.Row ="5" Grid.RowSpan="1" Background="White"/>
-        <local:SendEmailButton   Grid.Row="7"  Grid.ColumnSpan="1" Grid.RowSpan="1" Width="Auto" Height="Auto" 
+        Title="Mail sender" Height="300" Width="800">
+    <StackPanel Background="#FFF8CFCF" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+        <TabControl Background="#FFF8CFCF" TabStripPlacement="Left" VerticalAlignment="Stretch">
+            <TabItem >
+                <TabItem.Header>
+                    <StackPanel>
+                        <Image x:Name="imgSend" Source="Images/SendEmailImg.png"  Height="20" Width="20"/>
+                        <Label Content="Message"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
+                    <Label Content="Reciever" HorizontalAlignment="Center"  VerticalAlignment="Stretch" FontSize="16"/>
+                    <TextBox  Name ="tbReciever" Background="White" VerticalAlignment="Stretch"/>
+                    <Label Content="Subject" HorizontalAlignment="Center"  VerticalAlignment="Stretch" FontSize="16" />
+                    <TextBox  Name ="tbSubject" Background="White"/>
+                    <Label Content="Text" HorizontalAlignment="Center"  VerticalAlignment="Stretch" FontSize="16" />
+                    <TextBox  Name ="tbMessageText"  Background="White" VerticalAlignment="Stretch"  Height="50"/>
+                    <local:SendEmailButton    Width="Auto" Height="Auto" VerticalAlignment="Stretch"
                                  MessageText="{Binding ElementName=tbMessageText, Path=Text}" 
                                  Subject="{Binding ElementName=tbSubject, Path=Text}"
                                  Reciever="{Binding ElementName=tbReciever, Path=Text}"/>
-    </Grid>
+                </StackPanel>
+            </TabItem>
+            <TabItem >
+                <TabItem.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="19*"/>
+                            <ColumnDefinition Width="11*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image/>
+                        <Label Content="Info"/>
+                    </Grid>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem >
+                <TabItem.Header>
+                    <Grid>
+                        <Image/>
+                        <Label Content="Settings"/>
+                    </Grid>
+                </TabItem.Header>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
+                    <Label Content="Account" HorizontalAlignment="Center"  VerticalAlignment="Stretch" FontSize="16" />
+                    <TextBox  Name ="tbMessageAccountLogin"  Background="White" VerticalAlignment="Stretch"/>
+                    <Label Content="Password" HorizontalAlignment="Center"  VerticalAlignment="Stretch" FontSize="16" />
+                    <TextBox  Name ="tbMessageAccountPassword"  Background="White" VerticalAlignment="Stretch"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+
+    </StackPanel>
 </Window>
