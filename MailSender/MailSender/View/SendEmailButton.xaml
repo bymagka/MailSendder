@@ -14,6 +14,6 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Button x:Name="btnSend" Content="Send email" Grid.Column="1" Grid.ColumnSpan="1" HorizontalContentAlignment ="Center"/>
-        <Image x:Name="imgSend" Source="Images/SendEmailImg.png"  />
+        <Image x:Name="imgSend" Source="/Images/SendEmailImg.png"  />
     </Grid>
 </UserControl>

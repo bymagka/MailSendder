@@ -4,15 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MailSender"
+        xmlns:viewmodel="clr-namespace:MailSender.ViewModel"
         mc:Ignorable="d"
         Title="Mail sender" Height="300" Width="800">
+    <Window.DataContext>
+        <viewmodel:ViewModel/>
+    </Window.DataContext>
     <StackPanel Background="#FFF8CFCF" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
 
         <TabControl Background="#FFF8CFCF" TabStripPlacement="Left" VerticalAlignment="Stretch">
             <TabItem >
                 <TabItem.Header>
                     <StackPanel>
-                        <Image x:Name="imgSend" Source="Images/SendEmailImg.png"  Height="20" Width="20"/>
+                        <Image x:Name="imgSend" Source="/Images/SendEmailImg.png"  Height="20" Width="20"/>
                         <Label Content="Message"/>
                     </StackPanel>
                 </TabItem.Header>
@@ -24,9 +28,9 @@
                     <Label Content="Text" HorizontalAlignment="Center"  VerticalAlignment="Stretch" FontSize="16" />
                     <TextBox  Name ="tbMessageText"  Background="White" VerticalAlignment="Stretch"  Height="50"/>
                     <local:SendEmailButton    Width="Auto" Height="Auto" VerticalAlignment="Stretch"
-                                 MessageText="{Binding ElementName=tbMessageText, Path=Text}" 
-                                 Subject="{Binding ElementName=tbSubject, Path=Text}"
-                                 Reciever="{Binding ElementName=tbReciever, Path=Text}"/>
+                                 MessageText="{Binding ElementName=tbMessageText, Path=Text,NotifyOnValidationError=True}" 
+                                 Subject="{Binding ElementName=tbSubject, Path=Text,NotifyOnValidationError=True}"
+                                 Reciever="{Binding ElementName=tbReciever, Path=Text,NotifyOnValidationError=True}"/>
                 </StackPanel>
             </TabItem>
             <TabItem >
@@ -53,6 +57,17 @@
                     <TextBox  Name ="tbMessageAccountLogin"  Background="White" VerticalAlignment="Stretch"/>
                     <Label Content="Password" HorizontalAlignment="Center"  VerticalAlignment="Stretch" FontSize="16" />
                     <TextBox  Name ="tbMessageAccountPassword"  Background="White" VerticalAlignment="Stretch"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem >
+                <TabItem.Header>
+                    <Grid>
+                        <Image/>
+                        <Label Content="ExceptionsTest"/>
+                    </Grid>
+                </TabItem.Header>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
+                    <TextBox  Name ="tbLogin1"  Background="White" VerticalAlignment="Stretch" Text="{Binding  Path=Login1, Mode=TwoWay, NotifyOnValidationError=True}"/>
                 </StackPanel>
             </TabItem>
         </TabControl>
