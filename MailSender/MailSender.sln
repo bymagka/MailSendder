@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSender", "MailSender\Ma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMAccess", "MVVMAccess\MVVMAccess.csproj", "{52FD8521-9E56-413E-95B4-70124B344330}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson5_Homework", "Lesson5_Homework", "{F2680FBB-B7C9-408B-8F4C-1797FB9CD5AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threading", "Threading\Threading.csproj", "{34ACB6B7-9899-4EB8-85CD-F2B77F53C0E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +25,16 @@ Global
 		{52FD8521-9E56-413E-95B4-70124B344330}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52FD8521-9E56-413E-95B4-70124B344330}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52FD8521-9E56-413E-95B4-70124B344330}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34ACB6B7-9899-4EB8-85CD-F2B77F53C0E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34ACB6B7-9899-4EB8-85CD-F2B77F53C0E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34ACB6B7-9899-4EB8-85CD-F2B77F53C0E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34ACB6B7-9899-4EB8-85CD-F2B77F53C0E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{34ACB6B7-9899-4EB8-85CD-F2B77F53C0E3} = {F2680FBB-B7C9-408B-8F4C-1797FB9CD5AF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2C7B11C6-0EA5-4AA0-AEE4-F22E0D2871CB}
