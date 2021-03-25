@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -9,6 +10,8 @@ namespace Threading
 {
     class Program
     {
+        static object lockObject = new object();
+
         static void Main(string[] args)
         {
             int n = int.Parse(Console.ReadLine());
@@ -41,6 +44,45 @@ namespace Threading
 
                 n = int.Parse(Console.ReadLine());
             }
+
+
+            //files
+            //ver. 1
+            //thread for reading
+
+            Thread readingThread = new Thread(() =>
+            {
+           
+                File.Delete("../../students_6.txt");
+                using (StreamReader sr = new StreamReader("../../students_6.csv"))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        string textLine = sr.ReadLine();
+
+                        Thread writingThread = new Thread(new ParameterizedThreadStart((x) =>
+                        {
+                            string line = (string)x;
+
+                            lock (lockObject)
+                            {
+                                using (StreamWriter sw = new StreamWriter("../../students_6.txt", true))
+                                {
+                                    sw.WriteLine(line);
+                                }
+                            }
+
+
+
+                        }))
+                        {Priority=ThreadPriority.AboveNormal };
+
+                        writingThread.Start(textLine);
+                    }
+                }
+            });
+
+            readingThread.Start();
 
             Console.ReadKey();
         }
