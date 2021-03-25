@@ -47,9 +47,6 @@ namespace Threading
 
 
             //files
-            //ver. 1
-            //thread for reading
-
             Thread readingThread = new Thread(() =>
             {
            
@@ -74,8 +71,7 @@ namespace Threading
 
 
 
-                        }))
-                        {Priority=ThreadPriority.AboveNormal };
+                        }));
 
                         writingThread.Start(textLine);
                     }
@@ -84,7 +80,14 @@ namespace Threading
 
             readingThread.Start();
 
+            
+
             Console.ReadKey();
+
+            if(readingThread.ThreadState == ThreadState.Running)
+            {
+                readingThread.Join();
+            }
         }
     }
 }
