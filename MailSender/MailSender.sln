@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson5_Homework", "Lesson5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threading", "Threading\Threading.csproj", "{34ACB6B7-9899-4EB8-85CD-F2B77F53C0E3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson6_Homework", "Lesson6_Homework", "{70C96257-C204-42DA-BB91-9736C773FAE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parallel", "Parallel\Parallel.csproj", "{09A67535-1337-4F36-BF4D-056EAE4A43D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,12 +33,17 @@ Global
 		{34ACB6B7-9899-4EB8-85CD-F2B77F53C0E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34ACB6B7-9899-4EB8-85CD-F2B77F53C0E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34ACB6B7-9899-4EB8-85CD-F2B77F53C0E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09A67535-1337-4F36-BF4D-056EAE4A43D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09A67535-1337-4F36-BF4D-056EAE4A43D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09A67535-1337-4F36-BF4D-056EAE4A43D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09A67535-1337-4F36-BF4D-056EAE4A43D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{34ACB6B7-9899-4EB8-85CD-F2B77F53C0E3} = {F2680FBB-B7C9-408B-8F4C-1797FB9CD5AF}
+		{09A67535-1337-4F36-BF4D-056EAE4A43D7} = {70C96257-C204-42DA-BB91-9736C773FAE2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2C7B11C6-0EA5-4AA0-AEE4-F22E0D2871CB}
