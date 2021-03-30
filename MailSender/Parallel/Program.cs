@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.IO;
 
 namespace MyParallel
 {
@@ -32,12 +33,64 @@ namespace MyParallel
 
             Console.ReadKey();
 
+            //files
+            FileProcessing();
 
+            Console.ReadKey();
 
+        }
+
+        //task2
+        private static void FileProcessing()
+        {
+            DirectoryInfo di = new DirectoryInfo("../../Files");
+            var files = di.GetFiles(@"*.txt");
+            File.Delete(@"../../Files/result.dat");
+            Task[] TaskArray = new Task[files.Count()];
+
+            using (StreamWriter streamWriter = new StreamWriter("../../Files/result.dat",true))
+            { 
+                 
+                Parallel.For(0, files.Count(), (iterator) =>
+                 {
+                    TaskArray[iterator] = Task.Factory.StartNew(() => GetInfoAndSave(streamWriter,files[iterator]));
+                 });
+            }
+            Task.WaitAll(TaskArray);
+
+        }
+
+        static void GetInfoAndSave(StreamWriter streamWriter,FileInfo file)
+        {
+
+            string[] data = File.ReadAllText(file.FullName).Split(' ');
+
+            string resultLine = string.Empty;
+
+            switch (int.Parse(data[0]))
+            {
+                case 1:
+                    {
+                        resultLine += double.Parse(data[1].Replace('.',',')) * double.Parse(data[2].Replace('.', ','));
+                        break;
+                    }
+                case 2:
+                    {
+                        resultLine += double.Parse(data[1].Replace('.', ',')) / double.Parse(data[2].Replace('.', ','));
+                        break;
+                    }
+            }
+
+            resultLine += "\n" + "From file " + file.Name;
+
+            streamWriter.WriteLine(resultLine);
 
         }
     }
 
+   
+
+    //task1
     class MyMatrix
     {
         public int MaxValue { get; set; }
@@ -136,7 +189,7 @@ namespace MyParallel
             {
                 for(int j = 0; j < length; j++)
                 {
-                    view += string.Format(" {0:d"+ digitsNumber + "}", this[i, j]); 
+                    view += string.Format(" {0:d"+ digitsNumber + "}", this[i][j]); 
                 }
                 view += "\n";
             }
@@ -148,4 +201,7 @@ namespace MyParallel
 
 
     }
+
+
+
 }
