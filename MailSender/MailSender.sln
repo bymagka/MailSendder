@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson6_Homework", "Lesson6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parallel", "Parallel\Parallel.csproj", "{09A67535-1337-4F36-BF4D-056EAE4A43D7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson7_Homework", "Lesson7_Homework", "{39C04664-9FE9-4C27-9160-CE0126881148}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaWorkplace", "CinemaWorkplace\CinemaWorkplace.csproj", "{1BBDBFF6-33D2-4B6B-94FD-E83D741EF980}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,10 @@ Global
 		{09A67535-1337-4F36-BF4D-056EAE4A43D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09A67535-1337-4F36-BF4D-056EAE4A43D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09A67535-1337-4F36-BF4D-056EAE4A43D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BBDBFF6-33D2-4B6B-94FD-E83D741EF980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BBDBFF6-33D2-4B6B-94FD-E83D741EF980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BBDBFF6-33D2-4B6B-94FD-E83D741EF980}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BBDBFF6-33D2-4B6B-94FD-E83D741EF980}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +52,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{34ACB6B7-9899-4EB8-85CD-F2B77F53C0E3} = {F2680FBB-B7C9-408B-8F4C-1797FB9CD5AF}
 		{09A67535-1337-4F36-BF4D-056EAE4A43D7} = {70C96257-C204-42DA-BB91-9736C773FAE2}
+		{1BBDBFF6-33D2-4B6B-94FD-E83D741EF980} = {39C04664-9FE9-4C27-9160-CE0126881148}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2C7B11C6-0EA5-4AA0-AEE4-F22E0D2871CB}
