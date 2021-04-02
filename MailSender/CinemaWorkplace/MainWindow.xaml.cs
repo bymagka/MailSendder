@@ -20,9 +20,19 @@ namespace CinemaWorkplace
     /// </summary>
     public partial class MainWindow : Window
     {
+        CinemaDataBaseContainer dbContainer;
+
         public MainWindow()
         {
             InitializeComponent();
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            dbContainer = new CinemaDataBaseContainer();
+            dbContainer.Sessions.Load();
+            dgSessions.ItemsSource =  dbContainer.Sessions.Local.
         }
     }
 }

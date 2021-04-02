@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/01/2021 19:30:50
+-- Date Created: 04/02/2021 08:14:25
 -- Generated from EDMX file: D:\программирование\GeekBrains\c#\MailSender\MailSender\CinemaWorkplace\CinemaDataBase.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,20 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_SessionTicket]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[TicketDatabase] DROP CONSTRAINT [FK_SessionTicket];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Sessions]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Sessions];
+GO
+IF OBJECT_ID(N'[dbo].[TicketDatabase]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TicketDatabase];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables

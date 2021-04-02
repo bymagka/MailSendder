@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CinemaWorkplace"
         mc:Ignorable="d"
-        Title="Workplace" Height="450" Width="800">
+        Title="Workplace" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
         <TabControl>
             <TabItem Header="Sessions" FontSize="20">
