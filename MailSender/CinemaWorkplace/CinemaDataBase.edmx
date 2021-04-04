@@ -62,7 +62,6 @@
           <Property Name="SessionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Date" Type="DateTime" Nullable="false" />
           <Property Name="Movie" Type="String" Nullable="false" />
-          <NavigationProperty Name="Ticket" Relationship="CinemaDataBase.SessionTicket" FromRole="Session" ToRole="Ticket" />
         </EntityType>
         <EntityType Name="Ticket">
           <Key>

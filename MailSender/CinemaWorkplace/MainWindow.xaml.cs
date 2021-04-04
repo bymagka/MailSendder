@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.Entity;
 
 namespace CinemaWorkplace
 {
@@ -20,7 +22,8 @@ namespace CinemaWorkplace
     /// </summary>
     public partial class MainWindow : Window
     {
-        CinemaDataBaseContainer dbContainer;
+   
+        public static CinemaDataBaseContainer dbContainer;
 
         public MainWindow()
         {
@@ -30,9 +33,21 @@ namespace CinemaWorkplace
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+
             dbContainer = new CinemaDataBaseContainer();
+
+            dbContainer.TicketDatabase.Load();
             dbContainer.Sessions.Load();
-            dgSessions.ItemsSource =  dbContainer.Sessions.Local.
+            dgSessions.ItemsSource = dbContainer.Sessions.Local;
+                   
+            
+        }
+
+        private void btnAddSession_Click(object sender, RoutedEventArgs e)
+        {
+            AddWindow addWindow = new AddWindow();
+            addWindow.Show();
+           
         }
     }
 }

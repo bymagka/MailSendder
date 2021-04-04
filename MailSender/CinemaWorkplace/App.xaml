@@ -22,6 +22,7 @@
                 <Setter Property="BorderBrush" Value="DarkBlue"/>
                 <Setter Property="Margin" Value="10"/>
                 <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+ 
             </Style>
         </ResourceDictionary>
     </Application.Resources>

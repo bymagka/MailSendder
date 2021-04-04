@@ -10,9 +10,16 @@
         <TabControl>
             <TabItem Header="Sessions" FontSize="20">
                 <StackPanel Orientation="Vertical">
-                    <Button x:Name="btnAddSession" Content="Add sesion" />
+                    <Button x:Name="btnAddSession" Content="Add sesion" Click="btnAddSession_Click"/>
                     <Button x:Name="btnDeleteSession" Content="Delete sesion" />
-                    <DataGrid x:Name="dgSessions"  Height="250"/>
+                    <DataGrid x:Name="dgSessions"  Height="250" AutoGenerateColumns="False" CanUserAddRows="False" 
+                                                                                            CanUserResizeColumns="False" 
+                                                                                            CanUserDeleteRows="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="400" Header="Date" Binding="{Binding Path=Date}"/>
+                            <DataGridTextColumn Header="Movie" Width="400"  Binding="{Binding Path=Movie}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Tickets" FontSize="20">

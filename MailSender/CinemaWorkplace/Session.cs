@@ -14,17 +14,8 @@ namespace CinemaWorkplace
     
     public partial class Session
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Session()
-        {
-            this.Ticket = new HashSet<Ticket>();
-        }
-    
         public int SessionId { get; set; }
         public System.DateTime Date { get; set; }
         public string Movie { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ticket> Ticket { get; set; }
     }
 }
