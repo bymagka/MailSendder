@@ -13,6 +13,13 @@
         <TextBox x:Name="tbMovie" Margin="0,0,0,5"/>
         <Label Content="Enter date of new movie show" HorizontalAlignment="Center"/>
         <DatePicker x:Name="dpShowDate"/>
+        <ComboBox>
+            <ComboBoxItem Content="10:30"/>
+            <ComboBoxItem Content="11:30"/>
+            <ComboBoxItem Content="12:30"/>
+            <ComboBoxItem Content="13:30"/>
+            <ComboBoxItem Content="14:30"/>
+        </ComboBox>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <Button x:Name="btnOK" Width="100" Height="30" Content="OK"  FontSize="20" Click="btnOK_Click"/>
             <Button x:Name="btnCancel" Width="100" Height="30" Content="Cancel" FontSize="20" Click="btnCancel_Click"/>
