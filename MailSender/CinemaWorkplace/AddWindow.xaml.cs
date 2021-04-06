@@ -33,18 +33,28 @@ namespace CinemaWorkplace
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
             string movieName = tbMovie.Text;
-
-            DateTime selectedDate = (DateTime)dpShowDate.SelectedDate;
-
-            if (selectedDate != null)
+            int seconds = 0,hour = 0,minute = 0;
+            
+            if(cboTime.SelectedItem != null)
             {
+                string[] timeArray = (cboTime.SelectedItem as ComboBoxItem).Content.ToString().Split(':');
+                hour = int.Parse(timeArray[0]);
+                minute = int.Parse(timeArray[1]);
+            }
+
+            DateTime pickerDate = dpShowDate.SelectedDate.Value;
+         
+            
+            if (pickerDate != null)
+            {
+                DateTime selectedDate = new DateTime(pickerDate.Year, pickerDate.Month, pickerDate.Day, hour, minute, seconds);
+
                 MainWindow.dbContainer.Sessions.Add(new Session { Date = selectedDate,Movie=movieName });
                 MainWindow.dbContainer.SaveChanges();
                 MainWindow.dbContainer.Sessions.Load();
             }
 
-            
-
+            Close();
            
         }
 

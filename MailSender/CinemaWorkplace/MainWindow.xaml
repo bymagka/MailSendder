@@ -11,13 +11,15 @@
             <TabItem Header="Sessions" FontSize="20">
                 <StackPanel Orientation="Vertical">
                     <Button x:Name="btnAddSession" Content="Add sesion" Click="btnAddSession_Click"/>
-                    <Button x:Name="btnDeleteSession" Content="Delete sesion" />
-                    <DataGrid x:Name="dgSessions"  Height="250" AutoGenerateColumns="False" CanUserAddRows="False" 
+                    <Button x:Name="btnDeleteSession" Content="Delete sesion" Click="btnDeleteSession_Click"/>
+                    <DataGrid x:Name="dgSessions" AutoGenerateColumns="False" CanUserAddRows="False" 
                                                                                             CanUserResizeColumns="False" 
-                                                                                            CanUserDeleteRows="False">
+                                                                                            CanUserDeleteRows="False"
+                                                                                            HorizontalAlignment="Stretch"
+                                                                                            VerticalAlignment="Stretch">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Width="400" Header="Date" Binding="{Binding Path=Date}"/>
-                            <DataGridTextColumn Header="Movie" Width="400"  Binding="{Binding Path=Movie}"/>
+                            <DataGridTextColumn Header="Date" Binding="{Binding Path=Date}" />
+                            <DataGridTextColumn Header="Movie"  Binding="{Binding Path=Movie}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </StackPanel>

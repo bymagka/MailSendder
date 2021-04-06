@@ -49,5 +49,18 @@ namespace CinemaWorkplace
             addWindow.Show();
            
         }
+
+        private void btnDeleteSession_Click(object sender, RoutedEventArgs e)
+        {
+            Session session = dgSessions.SelectedItem as Session;
+
+            if (session != null)
+            {
+                dbContainer.Sessions.Remove(session);
+                dbContainer.SaveChanges();
+                dbContainer.Sessions.Load();
+                MessageBox.Show("Session successfully removed!");
+            }
+        }
     }
 }
