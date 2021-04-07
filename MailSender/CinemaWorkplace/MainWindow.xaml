@@ -12,22 +12,26 @@
                 <StackPanel Orientation="Vertical">
                     <Button x:Name="btnAddSession" Content="Add sesion" Click="btnAddSession_Click"/>
                     <Button x:Name="btnDeleteSession" Content="Delete sesion" Click="btnDeleteSession_Click"/>
-                    <DataGrid x:Name="dgSessions" AutoGenerateColumns="False" CanUserAddRows="False" 
-                                                                                            CanUserResizeColumns="False" 
-                                                                                            CanUserDeleteRows="False"
-                                                                                            HorizontalAlignment="Stretch"
-                                                                                            VerticalAlignment="Stretch">
+                    <DataGrid x:Name="dgSessions" Margin="10,10,9.667,10">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Date" Binding="{Binding Path=Date}" />
-                            <DataGridTextColumn Header="Movie"  Binding="{Binding Path=Movie}"/>
+                            <DataGridTextColumn Header="Date" Binding="{Binding Date}" Width="1*"/>
+                            <DataGridTextColumn Header="Movie"  Binding="{Binding Movie}" Width="1*"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Tickets" FontSize="20">
                 <StackPanel>
-                <Button x:Name="btnSellTicket" Content="Sell tickets"/>
-                <DataGrid x:Name="dgTickets"  Height="270"/>
+                <Button x:Name="btnSellTicket" Content="Sell tickets" Click="btnSellTicket_Click"/>
+                    <DataGrid x:Name="dgTickets"  Height="270">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Show" Binding="{Binding Session}" Width="2*"/>
+                            <DataGridTextColumn Header="Row"  Binding="{Binding Row}" Width="1*"/>
+                            <DataGridTextColumn Header="Place"  Binding="{Binding Place}" Width="1*"/>
+                            <DataGridTextColumn Header="Client"  Binding="{Binding Client}" Width="1*"/>
+                        </DataGrid.Columns>
+
+                    </DataGrid>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Report" FontSize="20">

@@ -75,6 +75,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CinemaDataBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="SellTicketsForm.xaml.cs">
+      <DependentUpon>SellTicketsForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Session.cs">
       <DependentUpon>CinemaDataBase.tt</DependentUpon>
     </Compile>
@@ -107,6 +110,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SellTicketsForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

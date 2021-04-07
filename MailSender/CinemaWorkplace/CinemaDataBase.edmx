@@ -29,7 +29,7 @@
     <Property Name="Place" Type="smallint" Nullable="false" />
     <Property Name="Client" Type="nvarchar(max)" Nullable="false" />
     <Property Name="SessionId" Type="int" Nullable="false" />
-    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <Association Name="SessionTicket">
     <End Role="Session" Type="CinemaDataBase.Store.Sessions" Multiplicity="1" />
@@ -72,7 +72,7 @@
           <Property Name="Client" Type="String" Nullable="false" />
           <NavigationProperty Name="Session" Relationship="CinemaDataBase.SessionTicket" FromRole="Ticket" ToRole="Session" />
           <Property Name="SessionId" Type="Int32" Nullable="false" />
-          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <Association Name="SessionTicket">
           <End Type="CinemaDataBase.Session" Role="Session" Multiplicity="1" />

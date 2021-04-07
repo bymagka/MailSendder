@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:CinemaWorkplace"
              mc:Ignorable="d" 
              Title="Add window"
-             Height="200" Width="400"
-             d:DesignHeight="200" d:DesignWidth="400">
+             Height="240" Width="400"
+             d:DesignHeight="250" d:DesignWidth="400">
     <StackPanel Orientation="Vertical" Background="AliceBlue">
         <Label Content="Enter name of the movie" HorizontalAlignment="Center"/>
         <TextBox x:Name="tbMovie" Margin="0,0,0,5"/>

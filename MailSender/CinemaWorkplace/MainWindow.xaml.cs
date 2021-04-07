@@ -39,8 +39,9 @@ namespace CinemaWorkplace
             dbContainer.TicketDatabase.Load();
             dbContainer.Sessions.Load();
             dgSessions.ItemsSource = dbContainer.Sessions.Local;
-                   
-            
+            dgTickets.ItemsSource = dbContainer.TicketDatabase.Local;
+
+
         }
 
         private void btnAddSession_Click(object sender, RoutedEventArgs e)
@@ -61,6 +62,12 @@ namespace CinemaWorkplace
                 dbContainer.Sessions.Load();
                 MessageBox.Show("Session successfully removed!");
             }
+        }
+
+        private void btnSellTicket_Click(object sender, RoutedEventArgs e)
+        {
+            SellTicketsForm sellWindow = new SellTicketsForm();
+            sellWindow.Show();
         }
     }
 }

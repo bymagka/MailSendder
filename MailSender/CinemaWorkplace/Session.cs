@@ -17,5 +17,10 @@ namespace CinemaWorkplace
         public int SessionId { get; set; }
         public System.DateTime Date { get; set; }
         public string Movie { get; set; }
+
+        public override string ToString()
+        {
+            return $"Film: {Movie}. Date: {Date}";
+        }
     }
 }

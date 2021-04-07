@@ -22,7 +22,27 @@
                 <Setter Property="BorderBrush" Value="DarkBlue"/>
                 <Setter Property="Margin" Value="10"/>
                 <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
- 
+                <Setter Property="CanUserAddRows" Value="False"/>
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="AutoGenerateColumns" Value="False"/>
+                <Setter Property="CanUserAddRows" Value="False"/>
+                <Setter Property="CanUserResizeColumns" Value="False"/>
+                <Setter Property="CanUserDeleteRows" Value="False"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalAlignment" Value="Stretch"/>
+            </Style>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+            <Style TargetType="DataGridColumnHeader">
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            </Style>
+            <Style TargetType="DataGridCell">
+                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

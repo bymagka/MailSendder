@@ -1,0 +1,30 @@
+﻿<Window x:Class="CinemaWorkplace.SellTicketsForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CinemaWorkplace"
+        mc:Ignorable="d"
+        Title="Sell ticket" Height="350" Width="500" Loaded="Window_Loaded">
+
+    <StackPanel Orientation="Vertical">
+        <Label Content="Choose the movie show" HorizontalAlignment="Center" Margin="10"/>
+        <ComboBox x:Name="cbMovieShows"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel Orientation="Vertical" Margin="30">
+                <Label Content="Row" Margin="10" HorizontalAlignment="Center"/>
+                <TextBox x:Name="tbRow" Text="{Binding Row}"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="30">
+                <Label Content="Place" Margin="10" HorizontalAlignment="Center"/>
+                <TextBox x:Name="tbPlace" Text="{Binding Place}"/>
+            </StackPanel>
+        </StackPanel>
+        <Label Content="Client"  HorizontalAlignment="Center"/>
+        <TextBox x:Name="tbClient" HorizontalAlignment="Center" Width="300" Text="{Binding Client}"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="btnSellTicket" Content="Sell ticket" Click="btnSellTicket_Click"/>
+            <Button x:Name="btnCancelTicket" Content="Cancel" Click="btnCancelTicket_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
